@@ -20,7 +20,6 @@
 
 ```js
 function Person() {}
-
 Person.prototype.name = 'lun';
 Person.prototype.sayName = function(){
     console.log(this.name);
@@ -269,6 +268,7 @@ function createAnother(o) {
 ```
 
 示例代码：
+
 ```
 var person = {
     name: 'lun'
