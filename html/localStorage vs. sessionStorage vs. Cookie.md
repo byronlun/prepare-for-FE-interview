@@ -54,7 +54,7 @@ console.log(sessionStorage.pagecount)
 - **作用域不同**。sessionStorage 不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的；cookie 也是在所有同源窗口中都是共享的。
 - **位置不同**。sessionStorage 和 localStorage 是 **window** 全局对象下的属性，cookie 是 （window.）**document** 对象的属性。
 
-参考链接：
+## 参考链接
 
 [Cookie MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
