@@ -73,7 +73,7 @@ console.log(sessionStorage.pagecount)
 
 ## 参考链接
 
-[Cookie MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
-[Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
-[浏览器本地数据（sessionStorage、localStorage、cookie）与server端数据  ](http://han.guokai.blog.163.com/blog/static/13671827120112694851799/)
-[Cookies 和 Session 的区别](http://blog.csdn.net/axin66ok/article/details/6175522)
+- [Cookie MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+- [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+- [浏览器本地数据（sessionStorage、localStorage、cookie）与server端数据  ](http://han.guokai.blog.163.com/blog/static/13671827120112694851799/)
+- [Cookies 和 Session 的区别](http://blog.csdn.net/axin66ok/article/details/6175522)
