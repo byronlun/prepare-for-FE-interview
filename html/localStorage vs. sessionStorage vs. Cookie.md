@@ -54,8 +54,26 @@ console.log(sessionStorage.pagecount)
 - **作用域不同**。sessionStorage 不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的；cookie 也是在所有同源窗口中都是共享的。
 - **位置不同**。sessionStorage 和 localStorage 是 **window** 全局对象下的属性，cookie 是 （window.）**document** 对象的属性。
 
+## Cookie 和 Session 的区别
+
+同： 都是用来跟踪浏览器用户身份的回话方式
+
+异： cookie 数据保存在客户端， session 数据保存在服务器端
+
+两者之间的联系可以描述如下：
+
+当你登录一个网站的时候
+
+如果 web 服务器端使用的是 session，那么所有的数据都保存在服务器上，客户端每次请求服务器的时候会发送当前会话的 sessionid，服务器根据当前 sessionid 判断相应的用户数据标志，以确定用户是否登录或具有某种权限。由于数据是存储在服务器上面，所以你不能伪造，但是如果你能够获取某个登录用户的 sessionid，用特殊的浏览器伪造该用户的请求也是能够成功的。sessionid 是服务器和客户端链接时候随机分配的，一般来说是不会有重复，但如果有大量的并发请求，也不是没有重复的可能性。
+ 
+如果浏览器使用的是 cookie，那么所有的数据都保存在浏览器端，比如你登录以后，服务器设置了 cookie 用户名，那么当你再次请求服务器的时候，浏览器会将用户名一块发送给服务器，这些变量有一定的特殊标记。服务器会解释为 cookie 变量，所以只要不关闭浏览器，那么 cookie 变量一直是有效的，所以能够保证长时间不掉线。如果你能够截获某个用户的 cookie 变量，然后伪造一个数据包发送过去，那么服务器还是认为你是合法的。所以，使用 cookie 被攻击的可能性比较大。如果设置了的有效时间，那么它会将 cookie 保存在客户端的硬盘上，下次再访问该网站的时候，浏览器先检查有没有 cookie，如果有的话，就读取该 cookie，然后发送给服务器。如果你在机器上面保存了某个论坛 cookie，有效期是一年，如果有人入侵你的机器，将你的  cookie 拷走，然后放在他的浏览器的目录下面，那么他登录该网站的时候就是用你的的身份登录的。所以 cookie 是可以伪造的。当然，伪造的时候需要主意，直接 copy cookie 文件到 cookie 目录，浏览器是不认的，他有一个 index.dat 文件，存储了 cookie 文件的建立时间，以及是否有修改，所以你必须先要有该网站的 cookie 文件，并且要从保证时间上骗过浏览器。
+
+
+
+
 ## 参考链接
 
 [Cookie MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
 [浏览器本地数据（sessionStorage、localStorage、cookie）与server端数据  ](http://han.guokai.blog.163.com/blog/static/13671827120112694851799/)
+[Cookies 和 Session 的区别](http://blog.csdn.net/axin66ok/article/details/6175522)
