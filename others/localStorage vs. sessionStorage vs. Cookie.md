@@ -53,6 +53,7 @@ console.log(sessionStorage.pagecount)
 - **数据有效期不同**。sessionStorage 仅在当前浏览器窗口（tab）关闭前有效，自然也就不可能持久保持；localStorage 始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie 只有在设置的 cookie 过期时间之前一直有效，即使窗口关闭。
 - **作用域不同**。sessionStorage 不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的；cookie 也是在所有同源窗口中都是共享的。
 - **位置不同**。sessionStorage 和 localStorage 是 **window** 全局对象下的属性，cookie 是 （window.）**document** 对象的属性。
+- Cookies 只可以存储字符串，sessionStorage 和 localStorage 就可以存储除了 Objects 和 Arrays 之外的 JavaScript 的函数，一般通过 API 去 存储 JSON；sessionStorage 还可以让你存储符合你服务器端语言的任何函数对象
 
 ## Cookie 和 Session 的区别（补充）
 
