@@ -168,9 +168,9 @@ HTTP报文的主体用于传输请求或响应的实体主体。通常，报文�
 
 1xx表示请求已被接受，但需要后续处理。
 
-100（Continue）：客户端应继续发送请求。
+>100（Continue）：客户端应继续发送请求。
 
-101（Switching Protocols）：需要切换协议，服务器通过的Upgrade响应头字段通知客户端。
+>101（Switching Protocols）：需要切换协议，服务器通过的Upgrade响应头字段通知客户端。
 HTML5引入的WebSocket便是这样工作的。首先客户端请求websocket所在的URL，服务器返回101，然后便建立了全双工的TCP连接。 注意Upgrade和Connection头字段属于Hop-by-hop字段，设置Websocket代理时需要继续设置这两个字段，而不是简单地转发请求。
 
 ### 2xx 
