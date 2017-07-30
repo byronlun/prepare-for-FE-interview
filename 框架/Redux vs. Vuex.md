@@ -1,6 +1,6 @@
 ﻿# Redux vs. Vuex
 
-标签（空格分隔）： react vue
+标签（空格分隔）： redux vuex
 
 ---
 
