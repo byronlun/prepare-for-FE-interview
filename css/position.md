@@ -38,6 +38,12 @@ bottom的值表示对象下边框与**浏览器窗口**底部的距离
 
 - top,bottom,left,right都是相对于**浏览器窗口**,无论父元素有没有设置position属性值为relative，都与父元素无关。
 
+值得注意的是，MDN文档上对于`postion: fixed`这个属性有如下描述：
+
+> 当元素祖先的 `transform`  属性非 `none` 时，容器由视口改为该祖先。
+
+所以当`position: fixed`的元素有 `transform`  属性非 `none` 的父元素时，将会相对于该父元素进行定位。
+
 ----------
 
 [**one nice blog**](http://blog.csdn.net/chen_zw/article/details/8741365)（demo里面含图，易理解）
