@@ -171,12 +171,23 @@ anotherInstance.getProperty();          //anotherProperty
 
 所谓寄生组合式继承，即通过借用构造函数来继承属性，通过原型链的混成形式来继承方法。
 
+先介绍下下面会提到的原型式继承的一个方法：
+```js
+function object(o){
+    function F() {}
+    F.prototype = o;
+    return new F();
+}
+```
+这个方法本质上是创建空对象继承传进来的原型对象。
+
+接下来就是寄生组合式的关键：
 核心方法
 ```js
 function inheritePrototype(subType, superType) {
-    var prototype = Object(superType.prototype);    //核心，创建对象（创建一个包含父类原型中所用方法的对象）
+    var prototype = object(superType.prototype);    //核心，创建对象（创建一个包含父类原型中所用方法的对象）
     prototype.constructor = subType;                //核心，增强对象（将这个对象的constructor指向子类）
-    subType.prototype = prototype;                  //核心，指定对象
+    subType.prototype = prototype;                  //核心，指定对象
 
 }
 ```
@@ -280,19 +291,3 @@ instance.sayName();     //lun
 
 - 优点： 在上一种原型式继承的基础上，创建新的子类对象的时候，可以添加子类对象自定义的方法。
 - 缺点： 也还是没有解决共享属性的问题。
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
