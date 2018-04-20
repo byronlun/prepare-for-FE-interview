@@ -182,6 +182,7 @@ function object(o){
 这个方法本质上是创建空对象继承传进来的原型对象。
 
 接下来就是寄生组合式的关键：
+
 核心方法
 ```js
 function inheritePrototype(subType, superType) {
