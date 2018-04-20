@@ -266,7 +266,7 @@ console.log(superObject.array);     //[1, 2, 3]
 其基本思路是： 创建一个仅用于封装继承过程的函数，该函数在内不以某种方式来增强对象，最后返回这个对象。
 
 核心代码示例：
-```
+```js
 function createAnother(o) {
     function F() {};
     F.prototype = o;
@@ -280,7 +280,7 @@ function createAnother(o) {
 
 示例代码：
 
-```
+```js
 var person = {
     name: 'lun'
 }; 
